@@ -1,6 +1,6 @@
 function addTodoElement(event) {
   const todoContainer = event.target.closest('section');
-  let listContainer = todoContainer.querySelector('ul');
+  let listContainer = todoContainer?.querySelector('ul');
 
   if (!todoContainer) {
     return;
@@ -22,8 +22,9 @@ function addTodoElement(event) {
 
 function createTextFieldElement(text = '') {
   const newTodoTextField = document.createElement('input');
+
   newTodoTextField.setAttribute('type', 'text');
-  newTodoTextField.setAttribute('onBlur', 'onBlurTodoTextField(event)');
+  newTodoTextField.setAttribute('onblur', 'onBlurTodoTextField(event)');
 
   newTodoTextField.value = text;
 
@@ -61,3 +62,10 @@ function onClickTodoText(event) {
     button.addEventListener('click', addTodoElement);
   });
 })()
+
+module.exports = {
+  addTodoElement,
+  createTextFieldElement,
+  onBlurTodoTextField,
+  onClickTodoText,
+}
