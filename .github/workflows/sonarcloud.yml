@@ -43,6 +43,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - run: echo ${{ secrets.SONARCLOUD_TOKEN }}
+        
       - name: Analyze with SonarCloud
 
         # You can pin the exact commit or the version.
